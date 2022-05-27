@@ -2,6 +2,33 @@
   padding-bottom: 100px;
   @include bg;
   background-image: url('/src/img/bgs/desc-bg.jpg');
+
+  @media (max-width: 1100px) {
+    padding-bottom: 0;
+  }
+
+  .container {
+    &::after {
+      position: absolute;
+      width: 659px;
+      aspect-ratio: 659/720;
+      @include bg;
+      background-image: url('/src/img/desc-owner.png');
+      right: -100px;
+      bottom: -100px;
+      content: '';
+      z-index: -1;
+
+      @media (max-width: 1100px) {
+        position: relative;
+        display: block;
+        right: 0;
+        bottom: 0;
+        @include max-width(659px);
+        margin-top: 20px;
+      }
+    }
+  }
 }
 
 .desc__title {
@@ -142,6 +169,34 @@
     &::after {
       content: url('/src/img/icons/desc/3.png');
       top: 10px;
+    }
+  }
+}
+
+.desc__btn-box {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+
+  @media (max-width: 650px) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.desc__btn-text {
+  @include max-width(343px);
+  margin-bottom: 0;
+  position: relative;
+
+  &::before {
+    content: url('/src/img/icons/desc-arrow.svg');
+    position: absolute;
+    @include y-align;
+    left: -46px;
+
+    @media (max-width: 650px) {
+      content: none;
     }
   }
 }

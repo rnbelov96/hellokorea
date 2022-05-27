@@ -1,0 +1,137 @@
+.line-form {
+  background: #ffffff;
+  box-shadow: 0px 41.7776px 68.9331px -40px rgba(197, 26, 124, 0.24441),
+    0px 22.3363px 36.8549px -40px rgba(197, 26, 124, 0.202676),
+    0px 12.5216px 20.6606px -40px rgba(197, 26, 124, 0.17),
+    0px 6.6501px 10.9727px -40px rgba(197, 26, 124, 0.137324),
+    0px 2.76726px 4.56597px -40px rgba(197, 26, 124, 0.0955895);
+  border-radius: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 31px;
+  padding-bottom: 37px;
+  position: relative;
+
+  @media (max-width: 650px) {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+
+.line-form__title {
+  margin-bottom: 25px;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+
+  @media (max-width: 650px) {
+    margin-bottom: 15px;
+    font-size: 16px !important;
+  }
+}
+
+.line-form__content {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 24px;
+
+  @media (max-width: 1050px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.line-form__input-container {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  justify-content: center;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.line-form__input-box {
+  background: #f4f4f4;
+  border-radius: 6px;
+  min-height: 83.4px;
+  @include max-width(230px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 48px;
+  padding-right: 10px;
+
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i})::before {
+      background-image: url('/src/img/icons/form/#{$i}.svg');
+    }
+  }
+
+  &::before {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    content: '';
+    background-color: white;
+    @include bg;
+    background-size: contain;
+    position: absolute;
+    @include y-align;
+    left: 20px;
+  }
+}
+
+.line-form__input {
+  width: 100%;
+  font-weight: 400;
+  line-height: 1.45;
+  font-size: 16px;
+  color: black;
+  outline: none;
+  border: none;
+  background-color: transparent;
+
+  &::-webkit-input-placeholder {
+    color: $dark-grey;
+    font-style: italic;
+  }
+
+  &::-moz-placeholder {
+    color: $dark-grey;
+    font-style: italic;
+  }
+
+  &:-ms-input-placeholder {
+    color: $dark-grey;
+    font-style: italic;
+  }
+
+  &:-moz-placeholder {
+    color: $dark-grey;
+    font-style: italic;
+  }
+}
+
+.line-form__text {
+  text-align: center;
+  font-weight: 500;
+  font-size: 13px;
+  color: #9a9a9a;
+  margin-bottom: 0;
+
+  @media (max-width: 650px) {
+    font-size: 13px !important;
+    text-align: left;
+  }
+
+  button {
+    @include reset-btn;
+    color: #9a9a9a;
+  }
+}

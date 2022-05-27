@@ -1,7 +1,8 @@
 .button {
   @include reset-btn;
-  font-size: 25px;
-  line-height: 32px;
+  font-size: 16px;
+  line-height: 1.45;
+  text-shadow: 0px 2px 10px rgba(22, 103, 202, 0.9);
   text-align: center;
   display: flex;
   justify-content: center;
@@ -11,24 +12,39 @@
   text-transform: uppercase;
   color: white;
   font-weight: 700;
-  background: linear-gradient(180deg, #ffa665 0%, #fc4f19 100%);
-  box-shadow: 0px 6px 0px #cb3300;
-  border-radius: 8px;
-  width: 100%;
-  min-height: 92px;
+  background: linear-gradient(90deg, #0acffe 0%, #495aff 100%);
+  box-shadow: 0px 4px 0px #3178ce, 0px 24px 100px rgba(35, 161, 255, 0.75),
+    inset 0px -2px 2px rgba(141, 200, 255, 0.5),
+    inset 0px 2px 2px rgba(114, 203, 255, 0.78);
+  border-radius: 10px;
+  @include max-width(326px);
+  min-height: 80px;
   overflow: hidden;
   position: relative;
 
-  @media (max-width: 650px) {
-    font-size: 16px;
+  span {
+    position: relative;
+    padding-right: 40px;
+
+    &::before {
+      right: 0;
+      @include y-align;
+      position: absolute;
+      width: 24px;
+      height: 37px;
+      @include bg;
+      background-image: url('/src/img/icons/btn-finger.svg');
+      content: '';
+    }
   }
 
   &:hover {
-    background: #fc4f19;
+    box-shadow: 0px 4px 0px #3178ce;
   }
 
   &:active {
-    background: #cb3300;
+    background: linear-gradient(0deg, #495aff, #495aff);
+    border-radius: 10px;
     box-shadow: none;
     top: 6px;
   }

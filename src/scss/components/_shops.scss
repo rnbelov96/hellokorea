@@ -1,0 +1,72 @@
+.shops {
+  @include bg;
+  background-image: url('/src/img/bgs/shops-bg.jpg');
+  min-height: 954px;
+  padding-top: 88px;
+}
+
+.shops__title {
+  text-align: center;
+  margin-bottom: 11px;
+}
+
+.shops__slider-wrapper {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  position: relative;
+
+  @media (max-width: 991px) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 650px) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.shops__slider-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 15px 26px !important;
+  background-color: #ffffff;
+  box-shadow: 0px 30px 65px rgba(166, 166, 166, 0.3),
+    0px 7px 20px rgba(166, 166, 166, 0.3);
+  margin-top: 0;
+
+  &::after {
+    content: none;
+  }
+
+  &_prev {
+    background-image: url('/src/img/icons/arrow-left.svg');
+    left: -30px;
+    top: 130px;
+  }
+  &_next {
+    background-image: url('/src/img/icons/arrow-right.svg');
+    right: -30px;
+    top: 130px;
+  }
+}
+
+.shops__slider-pagination {
+  position: relative;
+  bottom: 0;
+  margin-top: 30px;
+
+  .swiper-pagination-bullet-active {
+    background: linear-gradient(90deg, #0acffe 0%, #495aff 100%);
+  }
+
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+    background-color: rgba(154, 154, 154, 0.2);
+  }
+}
