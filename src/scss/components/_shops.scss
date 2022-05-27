@@ -3,6 +3,16 @@
   background-image: url('/src/img/bgs/shops-bg.jpg');
   min-height: 954px;
   padding-top: 88px;
+  z-index: 2;
+  position: relative;
+
+  @media (max-width: 1150px) {
+    padding-top: 50px;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 30px;
+  }
 }
 
 .shops__title {
@@ -26,6 +36,20 @@
   }
 }
 
+.shops__slider {
+  width: 100%;
+}
+
+.shops__slides-box {
+  position: relative;
+
+  @media (max-width: 1200px) {
+    max-width: 754px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 .shops__slider-btn {
   width: 60px;
   height: 60px;
@@ -36,7 +60,15 @@
   background-color: #ffffff;
   box-shadow: 0px 30px 65px rgba(166, 166, 166, 0.3),
     0px 7px 20px rgba(166, 166, 166, 0.3);
-  margin-top: 0;
+  margin-top: -30px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
 
   &::after {
     content: none;
@@ -45,12 +77,10 @@
   &_prev {
     background-image: url('/src/img/icons/arrow-left.svg');
     left: -30px;
-    top: 130px;
   }
   &_next {
     background-image: url('/src/img/icons/arrow-right.svg');
     right: -30px;
-    top: 130px;
   }
 }
 
@@ -69,4 +99,10 @@
     opacity: 1;
     background-color: rgba(154, 154, 154, 0.2);
   }
+}
+
+.shops__slide-img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
 }

@@ -90,7 +90,7 @@ main {
 
 .devider {
   @include max-width(420px);
-  aspect-ratio: 420/22;
+  aspect-ratio: 426/22;
   margin-left: auto;
   margin-right: auto;
   @include bg;
@@ -103,7 +103,7 @@ main {
 
 .substrate {
   &::after {
-    width: 98%;
+    width: 93%;
     position: absolute;
     bottom: -10px;
     height: 10px;

@@ -1,0 +1,215 @@
+.place {
+  @include bg;
+  background-image: url('/src/img/bgs/place-bg.jpg');
+  padding-top: 58px;
+  z-index: 3;
+  position: relative;
+  padding-bottom: 95px;
+
+  @media (max-width: 1150px) {
+    padding-bottom: 0;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 30px;
+  }
+}
+
+.place__title {
+  text-align: center;
+  margin-bottom: 11px;
+  color: white;
+  @include max-width(931px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.place__content {
+  margin-top: 60px;
+  margin-bottom: 70px;
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0px 41.7776px 68.9331px rgba(197, 26, 124, 0.24441),
+    0px 22.3363px 36.8549px rgba(197, 26, 124, 0.202676),
+    0px 12.5216px 20.6606px rgba(197, 26, 124, 0.17),
+    0px 6.6501px 10.9727px rgba(197, 26, 124, 0.137324),
+    0px 2.76726px 4.56597px rgba(197, 26, 124, 0.0955895);
+  border-radius: 10px;
+  @include max-width(657px);
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  padding-top: 26px;
+
+  @media (max-width: 1150px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 991px) {
+    margin-top: 40px;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 650px) {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  &::after {
+    content: url('/src/img/place-paper.png');
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @media (max-width: 991px) {
+      zoom: 0.8;
+    }
+
+    @media (max-width: 650px) {
+      zoom: 0.5;
+    }
+  }
+}
+
+.place__content-title {
+  font-weight: bold;
+  font-size: 30px;
+  color: $purple;
+  margin-bottom: 0;
+
+  @media (max-width: 650px) {
+    font-size: 24px !important;
+  }
+}
+
+.place__content-text {
+  @include max-width(470px);
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 32px;
+
+  @include mobile-mb;
+}
+
+.place__content-row {
+  margin-bottom: 20px;
+  background: #f4f4f4;
+  border-radius: 10px;
+  padding-top: 12px;
+  padding-bottom: 17px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.place__content-row-text {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 0;
+
+  &:nth-child(2) {
+    flex-shrink: 0;
+  }
+}
+
+.place__note-wrapper {
+  position: relative;
+
+  &::after {
+    width: 839px;
+    aspect-ratio: 839/1161;
+    @include bg;
+    content: '';
+    background-image: url('/src/img/place-img.png');
+    position: absolute;
+    right: -390px;
+    top: -901px;
+
+    @media (max-width: 1150px) {
+      position: relative;
+      left: initial;
+      right: -30px;
+      top: 0;
+      transform: none;
+      @include max-width(839px);
+      margin-top: 20px;
+      display: block;
+      margin-left: auto;
+    }
+
+    @media (max-width: 650px) {
+      width: 770px;
+      max-width: 770px;
+      left: 71%;
+      transform: translateX(-50%);
+      top: -310px;
+      margin-bottom: -310px;
+    }
+  }
+}
+
+.place__note-box {
+  background: #ffffff;
+  border-radius: 10px;
+  padding-top: 31px;
+  padding-bottom: 38px;
+  padding-left: 118px;
+  padding-right: 30px;
+  @include max-width(773px);
+
+  @media (max-width: 1150px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media (max-width: 650px) {
+    padding-left: 70px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.place__note-text {
+  @include max-width(491px);
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: bold;
+  margin-bottom: 0;
+  position: relative;
+
+  &::before {
+    width: 48px;
+    height: 60px;
+    @include bg;
+    background-image: url('/src/img/icons/place-bag.svg');
+    @include y-align;
+    left: -78px;
+    content: '';
+    position: absolute;
+
+    @media (max-width: 650px) {
+      left: -60px;
+    }
+  }
+}
+
+.place__substrate {
+  width: 93%;
+  position: absolute;
+  bottom: -10px;
+  height: 10px;
+  border-radius: 0 0 10px 10px;
+  background: #f4f4f4;
+  @include x-align;
+  content: '';
+}
