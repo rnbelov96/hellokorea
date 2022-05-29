@@ -1,0 +1,216 @@
+.clients {
+  background-color: $purple;
+  @include bg;
+  background-image: url('/src/img/bgs/clients-bg.jpg');
+  padding-top: 87px;
+  padding-bottom: 95px;
+
+  @media (min-width: 1921px) {
+    background-size: initial;
+  }
+
+  @media (max-width: 1150px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.clients__title {
+  color: white;
+  margin-bottom: 11px;
+}
+
+.clients__content {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+
+  @media (max-width: 991px) {
+    margin-top: 40px;
+  }
+
+  @media (max-width: 650px) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 20px;
+  }
+}
+
+.clients__left-side {
+  @include max-width(444px);
+  position: relative;
+  padding-left: 40px;
+  padding-right: 30px;
+  padding-bottom: 49px;
+  padding-top: 32px;
+  background: #ffffff;
+  box-shadow: 0px 41.7776px 68.9331px rgba(197, 26, 124, 0.24441),
+    0px 22.3363px 36.8549px rgba(197, 26, 124, 0.202676),
+    0px 12.5216px 20.6606px rgba(197, 26, 124, 0.17),
+    0px 6.6501px 10.9727px rgba(197, 26, 124, 0.137324),
+    0px 2.76726px 4.56597px rgba(197, 26, 124, 0.0955895);
+  border-radius: 10px;
+
+  @media (max-width: 650px) {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+  }
+}
+
+.clients__num-list-title {
+  max-width: 302px;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.clients__num-list {
+  @include reset-list;
+
+  & > * + * {
+    margin-top: 27px;
+  }
+}
+
+.clients__num-item {
+  font-weight: bold;
+  line-height: 1.45;
+  padding-left: 60px;
+  position: relative;
+
+  &::before {
+    width: 40px;
+    height: 40px;
+    background: #f14294;
+    border: 2px solid #ffffff;
+    box-shadow: 0px 7px 20px rgba(241, 66, 148, 0.7);
+    text-align: center;
+    line-height: 36px;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+    position: absolute;
+    left: 0;
+    @include y-align;
+    border-radius: 50%;
+  }
+
+  @for $i from 1 through 9 {
+    &:nth-child(#{$i})::before {
+      content: '0#{$i}';
+    }
+  }
+
+  &:nth-child(10)::before {
+    content: '10';
+  }
+}
+
+.clients__right-side {
+  @include max-width(656px);
+  padding-top: 40px;
+  position: relative;
+  padding-right: 30px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  background: #ffffff;
+  box-shadow: 0px 41.7776px 68.9331px rgba(197, 26, 124, 0.24441),
+    0px 22.3363px 36.8549px rgba(197, 26, 124, 0.202676),
+    0px 12.5216px 20.6606px rgba(197, 26, 124, 0.17),
+    0px 6.6501px 10.9727px rgba(197, 26, 124, 0.137324),
+    0px 2.76726px 4.56597px rgba(197, 26, 124, 0.0955895);
+  border-radius: 10px;
+
+  @media (max-width: 650px) {
+    padding-right: 15px;
+    padding-left: 15px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+}
+
+.clients__list {
+  @include reset-list;
+
+  & > * + * {
+    margin-top: 30px;
+  }
+}
+
+.clients__item {
+  font-weight: bold;
+  line-height: 1.45;
+  padding-left: 70px;
+  position: relative;
+
+  @media (max-width: 650px) {
+    padding-left: 50px;
+  }
+
+  &::before {
+    width: 40px;
+    height: 40px;
+    @include bg;
+    position: absolute;
+    left: 0;
+    top: 3px;
+    content: '';
+  }
+
+  &:nth-child(1) {
+    max-width: 496px;
+
+    &::before {
+      background-image: url('/src/img/icons/clients/1.svg');
+    }
+  }
+  &:nth-child(2) {
+    max-width: 474px;
+
+    &::before {
+      background-image: url('/src/img/icons/clients/2.svg');
+    }
+  }
+  &:nth-child(3) {
+    max-width: 533px;
+
+    &::before {
+      background-image: url('/src/img/icons/clients/3.svg');
+    }
+  }
+  &:nth-child(4) {
+    &::before {
+      background-image: url('/src/img/icons/clients/4.svg');
+    }
+  }
+}
+
+.clients__note {
+  color: white;
+  background: #141414;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-left: 36px;
+  padding-right: 36px;
+  padding-bottom: 20px;
+  font-weight: bold;
+  max-width: 444px;
+
+  @media (max-width: 1150px) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  span {
+    font-size: 20px;
+  }
+}

@@ -2,22 +2,22 @@
 export {};
 
 const animationNameList = ['zoomIn', 'fadeIn', 'backInDown'];
-const animationNumber = 0;
+const animationNumber = 1;
 
 const openedModalList: Element[] = [];
 
 const modalFormInfoList = [
   {
     title: 'Оставьте заявку на бесплатную консультацию',
-    button: 'Получить консультацию',
+    button: 'Получить',
   },
   {
-    title: 'Оставьте заявку на презентацию франшизы и финансовую модель',
-    button: 'Получить презентацию',
+    title: 'Получите презентацию франшизы и финансовую модель',
+    button: 'Получить',
   },
   {
     title: `Уже уходите? <br> 
-      Получите бесплатную презентацию на почту.`,
+      Получите презентацию франшизы на почту.`,
     button: 'Получить презентацию',
   },
 ];

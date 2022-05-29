@@ -65,3 +65,21 @@ const DOMAnimations = {
     return this.slideUp(element, duration);
   },
 };
+
+const dropdownBtnElList = document.querySelectorAll('.js-dropdown-btn');
+
+dropdownBtnElList.forEach(el => {
+  el.addEventListener('click', () => {
+    const listToToggle = el.previousElementSibling;
+    const btnCaptionEl = el.querySelector('span') as HTMLSpanElement;
+
+    if (el.classList.contains('steps__item-btn_opened')) {
+      btnCaptionEl.textContent = 'Cмотреть весь список';
+    } else {
+      btnCaptionEl.textContent = 'Скрыть весь список';
+    }
+
+    DOMAnimations.slideToggle(listToToggle);
+    el.classList.toggle('steps__item-btn_opened');
+  });
+});

@@ -1,0 +1,315 @@
+.steps {
+  padding-top: 221px;
+  padding-bottom: 95px;
+  @include bg;
+  background-image: url('/src/img/bgs/steps-bg.png');
+  position: relative;
+  top: -140px;
+  margin-bottom: -140px;
+
+  @media (max-width: 1150px) {
+    background-image: none;
+    background-color: $purple;
+    padding-top: 180px;
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: 650px) {
+    padding-top: 160px;
+    padding-bottom: 30px;
+  }
+}
+
+.steps__title {
+  text-align: center;
+  margin-bottom: 11px;
+  color: white;
+}
+
+.steps__text {
+  margin-top: 30px;
+  margin-bottom: 60px;
+  @include max-width(893px);
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+
+  @media (max-width: 991px) {
+    margin-bottom: 40px;
+    margin-top: 20px;
+  }
+
+  @media (max-width: 650px) {
+    margin-bottom: 20px;
+  }
+}
+
+.steps__list {
+  @include reset-list;
+  display: flex;
+  gap: 30px 20px;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 71px;
+  position: relative;
+
+  &::before {
+    content: url('/src/img/steps-leaf-left.png');
+    position: absolute;
+    left: -207px;
+    top: 150px;
+
+    @media (max-width: 1150px) {
+      content: none;
+    }
+  }
+
+  &::after {
+    content: url('/src/img/steps-leaf-right.png');
+    position: absolute;
+    right: -275px;
+    top: 111px;
+
+    @media (max-width: 1150px) {
+      content: none;
+    }
+  }
+
+  @media (max-width: 991px) {
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 650px) {
+    margin-bottom: 30px;
+  }
+}
+
+.steps__item {
+  position: relative;
+  min-height: 646px;
+  @include max-width(366px);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 217px;
+  padding-bottom: 75px;
+  background: #ffffff;
+  box-shadow: 0px 41.7776px 68.9331px rgba(197, 26, 124, 0.24441),
+    0px 22.3363px 36.8549px rgba(197, 26, 124, 0.202676),
+    0px 12.5216px 20.6606px rgba(197, 26, 124, 0.17),
+    0px 6.6501px 10.9727px rgba(197, 26, 124, 0.137324),
+    0px 2.76726px 4.56597px rgba(197, 26, 124, 0.0955895);
+  border-radius: 10px;
+
+  @for $i from 1 through 3 {
+    &:nth-child(#{$i}) {
+      .steps__item-title {
+        &:before {
+          content: url('/src/img/icons/steps/#{$i}.jpg');
+        }
+      }
+    }
+  }
+}
+
+.steps__item-title {
+  text-align: center;
+  margin-bottom: 31px;
+  position: relative;
+  font-weight: bold;
+  font-size: 20px;
+
+  &:before {
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    transform: translateX(-50%) translateY(-100%);
+  }
+
+  @include mobile-mb;
+}
+
+.steps__item-list {
+  @include reset-list;
+  & > * + * {
+    margin-top: 13px;
+  }
+
+  &:nth-child(3) {
+    margin-top: 13px;
+    display: none;
+  }
+}
+
+.steps__item-item {
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.45;
+
+  &::before {
+    width: 8px;
+    height: 8px;
+    background-color: $purple;
+    position: absolute;
+    left: 0;
+    top: 7px;
+    content: '';
+    border-radius: 50%;
+  }
+}
+
+.steps__item-btn {
+  @include reset-btn;
+  font-weight: bold;
+  text-decoration: underline;
+  line-height: 1.45;
+  color: #f14294;
+  position: absolute;
+  left: 38px;
+  bottom: 30px;
+  position: absolute;
+
+  &_opened {
+    span::after {
+      transform: rotate(180deg);
+    }
+  }
+
+  span {
+    padding-right: 26px;
+    position: relative;
+
+    &:after {
+      content: '';
+      width: 18px;
+      height: 11px;
+      @include bg;
+      background-image: url('/src/img/icons/steps-arrow.svg');
+      right: 0;
+      top: 8px;
+      position: absolute;
+      transition: 0.5s;
+    }
+  }
+}
+
+.steps__note {
+  padding-left: 100px;
+  position: relative;
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 0;
+  color: white;
+  margin-bottom: 66px;
+
+  @media (max-width: 991px) {
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: 650px) {
+    margin-bottom: 30px;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  &::before {
+    content: '';
+    width: 70px;
+    height: 70px;
+    @include bg;
+    background-image: url('/src/img/icons/steps-check.svg');
+    position: absolute;
+    left: 0;
+    @include y-align;
+    box-shadow: 0px 41.7776px 68.9331px rgba(197, 26, 124, 0.24441),
+      0px 22.3363px 36.8549px rgba(197, 26, 124, 0.202676),
+      0px 12.5216px 20.6606px rgba(197, 26, 124, 0.17),
+      0px 6.6501px 10.9727px rgba(197, 26, 124, 0.137324),
+      0px 2.76726px 4.56597px rgba(197, 26, 124, 0.0955895);
+    border-radius: 10px;
+
+    @media (max-width: 650px) {
+      position: relative;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+      top: 0;
+      transform: none;
+    }
+  }
+}
+
+.steps__content {
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 1150px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.steps__left-side {
+  @include max-width(560px);
+  position: relative;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  background-color: white;
+  border-radius: 10px 0 0 10px;
+  padding-left: 130px;
+  padding-right: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 0;
+
+  @media (max-width: 1150px) {
+    border-radius: 10px 10px 0 0;
+  }
+
+  @media (max-width: 650px) {
+    padding: 20px;
+    padding-top: 120px;
+  }
+
+  span {
+    font-size: 30px;
+    color: $purple;
+  }
+
+  &::after {
+    content: url('/src/img/icons/steps-cash.jpg');
+    position: absolute;
+    left: 60px;
+    @include y-align;
+    zoom: 0.5;
+
+    @media (max-width: 650px) {
+      @include x-align;
+      top: 10px;
+    }
+  }
+}
+
+.steps__right-side {
+  @include max-width(560px);
+  border-radius: 0px 10px 10px 0px;
+  color: white;
+  padding-top: 36px;
+  padding-bottom: 43px;
+  padding-left: 41px;
+  padding-right: 50px;
+  background: #141414;
+  font-size: 20px;
+  margin-bottom: 0;
+
+  @media (max-width: 1150px) {
+    border-radius: 0px 0px 10px 10px;
+  }
+
+  @media (max-width: 650px) {
+    padding: 20px;
+  }
+}

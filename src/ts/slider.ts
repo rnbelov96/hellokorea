@@ -38,6 +38,20 @@ const swiper = new Swiper('.shops__slider', {
   },
 });
 
+const reviewsSwiper = new Swiper('.reviews__slider', {
+  slidesPerView: 1,
+  spaceBetween: 20,
+  loop: true,
+  pagination: {
+    el: '.reviews__slider-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.reviews__slider-btn_next',
+    prevEl: '.reviews__slider-btn_prev',
+  },
+});
+
 // const swiper = new Swiper('.slidersection__slider', {
 //   slidesPerView: 3,
 //   spaceBetween: 30,

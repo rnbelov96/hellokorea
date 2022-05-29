@@ -43,6 +43,29 @@
   position: relative;
   margin-bottom: 60px;
 
+  &::after {
+    width: 1123px;
+    aspect-ratio: 1123/794;
+    position: absolute;
+    content: '';
+    @include bg;
+    background-image: url('/src/img/cosmetic.webp');
+    left: -1060px;
+    top: 0px;
+    z-index: -1;
+
+    @media (max-width: 710px) {
+      width: 100%;
+      position: relative;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      top: 0;
+      margin-top: 15px;
+    }
+  }
+
   @include tablet-mb;
   @include mobile-mb;
 
