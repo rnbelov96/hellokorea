@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 export {};
 
-const animationNameList = ['zoomIn', 'fadeIn', 'backInDown'];
+const animationNameList = ['zoomIn', 'fadeInDown', 'backInDown'];
 const animationNumber = 1;
 
 const openedModalList: Element[] = [];
@@ -124,8 +124,8 @@ document.addEventListener('mouseleave', e => {
     if (formTitleEl && formBtnEl && formBtnHidden && formTitleHidden) {
       formTitleEl.innerHTML = modalFormInfoList[2].title;
       formBtnEl.textContent = modalFormInfoList[2].button;
-      formBtnHidden.value = modalFormInfoList[2].title;
-      formTitleHidden.value = modalFormInfoList[2].button;
+      formBtnHidden.value = modalFormInfoList[2].button;
+      formTitleHidden.value = modalFormInfoList[2].title;
     }
     openModal(formModalEl as HTMLDivElement);
   }

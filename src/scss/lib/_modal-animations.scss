@@ -42,27 +42,31 @@
   -webkit-animation-name: backInDown;
   animation-name: backInDown;
 }
-@-webkit-keyframes fadeIn {
+@-webkit-keyframes fadeInDown {
   from {
     opacity: 0;
+    top: -50px
   }
 
   to {
     opacity: 1;
+    top: 0px
   }
 }
-@keyframes fadeIn {
+@keyframes fadeInDown {
   from {
     opacity: 0;
+    top: -50px
   }
 
   to {
     opacity: 1;
+    top: 0;
   }
 }
-.animate__fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
+.animate__fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
 }
 
 @-webkit-keyframes zoomIn {
