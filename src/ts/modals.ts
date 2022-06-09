@@ -53,6 +53,8 @@ let isYoutubeModalOpened = false;
 
 const formTitleEl = formModalEl.querySelector('.js-modal-form-title') as HTMLSpanElement;
 const formBtnEl = formModalEl.querySelector('.js-modal-form-btn') as HTMLButtonElement;
+const formBtnHidden = formModalEl.querySelector('.js-modal-btn-hidden') as HTMLInputElement;
+const formTitleHidden = formModalEl.querySelector('.js-modal-title-hidden') as HTMLInputElement;
 
 const modalWrapperElList = document.querySelectorAll('.modal__center-wrapper');
 modalElList.forEach(modalEl => {
@@ -95,6 +97,8 @@ callbackBtnElList.forEach(btn => {
     openedModalList.unshift(formModalEl);
     formTitleEl.textContent = modalFormInfoList[0].title;
     formBtnEl.textContent = modalFormInfoList[0].button;
+    formBtnHidden.value = modalFormInfoList[0].title;
+    formTitleHidden.value = modalFormInfoList[0].button;
     openModal(formModalEl as HTMLDivElement);
   });
 });
@@ -105,6 +109,8 @@ presentBtnElList.forEach(btn => {
     openedModalList.unshift(formModalEl);
     formTitleEl.textContent = modalFormInfoList[1].title;
     formBtnEl.textContent = modalFormInfoList[1].button;
+    formBtnHidden.value = modalFormInfoList[1].title;
+    formTitleHidden.value = modalFormInfoList[1].button;
     openModal(formModalEl as HTMLDivElement);
   });
 });
@@ -115,8 +121,12 @@ document.addEventListener('mouseleave', e => {
   if (e.clientY < 10 && !isLeaveModalOpened) {
     isLeaveModalOpened = true;
     openedModalList.unshift(formModalEl);
-    formTitleEl.innerHTML = modalFormInfoList[2].title;
-    formBtnEl.textContent = modalFormInfoList[2].button;
+    if (formTitleEl && formBtnEl && formBtnHidden && formTitleHidden) {
+      formTitleEl.innerHTML = modalFormInfoList[2].title;
+      formBtnEl.textContent = modalFormInfoList[2].button;
+      formBtnHidden.value = modalFormInfoList[2].title;
+      formTitleHidden.value = modalFormInfoList[2].button;
+    }
     openModal(formModalEl as HTMLDivElement);
   }
 });
