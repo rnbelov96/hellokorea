@@ -119,15 +119,15 @@ let isLeaveModalOpened = false;
 
 document.addEventListener('mouseleave', e => {
   if (e.clientY < 10 && !isLeaveModalOpened) {
-    isLeaveModalOpened = true;
-    openedModalList.unshift(formModalEl);
     if (formTitleEl && formBtnEl && formBtnHidden && formTitleHidden) {
+      isLeaveModalOpened = true;
+      openedModalList.unshift(formModalEl);
       formTitleEl.innerHTML = modalFormInfoList[2].title;
       formBtnEl.textContent = modalFormInfoList[2].button;
       formBtnHidden.value = modalFormInfoList[2].button;
       formTitleHidden.value = modalFormInfoList[2].title;
+      openModal(formModalEl as HTMLDivElement);
     }
-    openModal(formModalEl as HTMLDivElement);
   }
 });
 
